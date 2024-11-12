@@ -1,6 +1,8 @@
 # Start Here
 
-Note: this application has been created within in a timebox of 2-3 hours.
+Note: this application has been created within a timebox of 2-3 hours.
+
+https://github.com/user-attachments/assets/e975b3a4-960d-4c24-b294-445f6a51556b
 
 #### Clone the repository
 `git clone git@github.com:foxtacles/weather.git`
