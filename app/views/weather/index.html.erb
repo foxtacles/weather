@@ -1,0 +1,33 @@
+<div class="w-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6">
+  <h1 class="text-5xl font-extrabold mb-8">Weather Forecast</h1>
+
+  <div class="w-full max-w-lg bg-white rounded-lg shadow-lg p-8 text-gray-800">
+    <%= form_with url: '/forecast', method: :post, data: { turbo_frame: 'forecast' }, class: 'space-y-6' do |f| %>
+      <div>
+        <%= f.label :street, "Street Address", class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.text_field :street, class: "mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.label :city, "City", class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.text_field :city, class: "mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.label :state, "State", class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.text_field :state, class: "mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.label :zip, "ZIP Code", class: "block text-sm font-semibold text-gray-700" %>
+        <%= f.text_field :zip, required: true, class: "mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.submit "Submit", class: "w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-400" %>
+      </div>
+    <% end %>
+
+    <turbo-frame id="forecast" class="w-full max-w-lg mt-6"></turbo-frame>
+  </div>
+</div>

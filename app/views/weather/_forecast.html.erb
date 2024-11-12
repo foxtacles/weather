@@ -1,0 +1,19 @@
+<turbo-frame id="forecast">
+  <div class="p-4 bg-gray-100 rounded-md shadow">
+    <% if is_cached %>
+      <span>Note: data shown below has been cached.</span>
+    <% end %>
+    <p><strong>Current temperature:</strong> <%= current_temperature %>°F</p>
+    <h2 class="text-lg font-semibold mb-4">Daily Weather Forecast</h2>
+    <ul class="space-y-2">
+      <% daily_weather.each do |day| %>
+        <li class="p-3 bg-white rounded shadow">
+          <p><strong>Date:</strong> <%= Time.at(day["dt"]).to_date %></p>
+          <p><strong>Summary:</strong> <%= day["summary"] %></p>
+          <p><strong>Min Temp:</strong> <%= day["temp"]["min"] %>°F</p>
+          <p><strong>Max Temp:</strong> <%= day["temp"]["max"] %>°F</p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</turbo-frame>

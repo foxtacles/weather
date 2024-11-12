@@ -1,0 +1,16 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false
+
+# Use update! and save! instead of update and save
+Rails/SaveBang:
+  Enabled: true
+
+# Checks for two or more consecutive blank lines
+Layout/EmptyLines:
+  Enabled: true
